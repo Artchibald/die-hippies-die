@@ -1,0 +1,1139 @@
+body {
+	background: #170020; 
+
+.signature {
+	display: block;
+	position: absolute; 
+	bottom:0.2%;
+	right:0.2%;
+	z-index: 4;//at top!!
+		a {
+			color: white;
+			font-size: 11px;
+			font-family: 'Gaegu', cursive, Impact, Arial;
+			text-decoration: none;
+			opacity: 0.3;
+		}
+}
+// menu
+// Burger menu button
+$burger--thickness: 4px;
+
+
+.burger {
+	z-index: -3 ;//above owl hover eyes and menu pop 
+	$width: 28px;
+	position: absolute;
+	right: 28px;
+    top: 30px;
+	display: inline-block;
+    border: 0;
+	background: none;
+	outline: 0;
+	padding: 0;
+	cursor: pointer;
+
+	border-bottom: $burger--thickness solid #fff;
+	width: $width;
+
+	transition: border-bottom 1s ease-in-out;
+	-webkit-transition: border-bottom 1s ease-in-out; 
+
+	// Fix for extra space in Firefox
+	&::-moz-focus-inner {
+		border: 0;
+		padding: 0;
+	}	 
+
+	&:before {
+		content: "";
+		display: block;
+		border-bottom: $burger--thickness solid #fff;
+		width: 100%;
+		margin-bottom: 5px;
+		transition: transform 0.5s ease-in-out;    
+		-webkit-transition: -webkit-transform 0.5s ease-in-out;        
+	}
+
+	&:after {
+		content: "";
+		display: block;
+		border-bottom: $burger--thickness solid #fff;
+		width: 100%;
+		margin-bottom: 5px;
+		transition: transform 0.5s ease-in-out;
+		-webkit-transition: -webkit-transform 0.5s ease-in-out;
+	}
+}
+
+.burger-check {
+  display: none;
+
+}
+
+.burger-check:checked ~ .burger {
+	color: black;
+  border-bottom: $burger--thickness solid transparent;
+  transition: border-bottom 0.8s ease-in-out;
+  -webkit-transition: border-bottom 0.8s ease-in-out;
+
+  &:before {
+   border-bottom: $burger--thickness solid black;
+    transform: rotate(-405deg) translateY(1px) translateX(-3px);
+    -webkit-transform: rotate(-405deg) translateY(1px) translateX(-3px);      
+    transition: transform 0.5s ease-in-out;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  }
+
+  &:after {
+  	  border-bottom: $burger--thickness solid black;
+    transform: rotate(405deg) translateY(-4px) translateX(-5px); 
+    -webkit-transform: rotate(405deg) translateY(-4px) translateX(-5px);       
+    transition: transform 0.5s ease-in-out;
+    -webkit-transition: -webkit-transform 0.5s ease-in-out;
+  }
+}
+
+// * * * Navigation * * *
+		@-webkit-keyframes slide1 {
+		0% { -webkit-transform:translateY(-50px);
+			opacity:0;}
+		100% { -webkit-transform:translateY(0px);
+			opacity:1;}
+		}
+		@-moz-keyframes spin1 {
+		0% { -moz-transform:translateY(-50px);
+			opacity:0;}
+		100% { -moz-transform:translateY(0px);
+			opacity:1;}
+		}
+		@-o-keyframes spin1 {
+		0% { -o-transform:translateY(-50px);
+			opacity:0;}
+		100% { -o-transform:translateY(0px);
+			opacity:1;}
+		}
+		@-ms-keyframes spin1 {
+		0% { -ms-transform:translateY(-50px);
+			opacity:0;}
+		100% { -ms-transform:translateY(0px);
+			opacity:1;}
+		}
+		@-keyframes spin1 {
+		0% { transform:translateY(-50px);
+			opacity:0;}
+		100% { transform:translateY(0px);
+			opacity:1;}
+		} 
+
+.navigation {
+  overflow: hidden;
+  max-height: 0;
+  position: absolute;
+  background: white;
+  z-index: 2 ;//above owl hover eyes and menu pop 
+  right: 0;
+  	ul {
+  		padding-top:50px;
+  		padding-right: 32px;
+  			li {  list-style: none;
+  				text-align: right;
+  				
+  				a {
+  					font-family: 'Gaegu', cursive, Impact, Arial;
+  					text-decoration: none;
+  					font-size: 22px;
+  					color: black;
+  					&:hover {
+  						color: #8338b5;
+  					}
+  				}
+  			}
+  	}
+}
+
+.burger-check:checked ~ .navigation {
+  min-height: 100%;
+    border-left:2px solid black;
+  
+      
+
+        -webkit-animation: slide1 0.5s forwards;
+    -webkit-animation-delay: 0s;
+    animation: slide1 0.5s forwards;
+    animation-delay: 0s;
+}
+// end of menu nav css
+
+
+
+
+
+
+
+
+
+
+
+
+
+	/*pre loader*/
+	.preloader{
+     width: 100%;
+     height: 100%;
+     position: fixed;
+     top: 0;
+     left: 0;
+     background: #170020;
+     visibility:hidden;
+     opacity:0;
+/*     transform:all 0.5s ease;*/
+     z-index:99999999999999;
+}
+ .preloader_inner {
+ 	 background: #170020;
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     margin: auto;
+     width: 4em;
+     height: 4em;
+     line-height: 4em;
+     text-align: center;
+     font-size: 3em;
+     font-family: 'Gaegu', cursive, Impact, Arial;
+      font-weight: 300;
+     color: #fff;
+}
+ .page{
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     margin: auto;
+     width: 100%;
+     height: auto;
+     transition:all 0.5s ease;
+}
+ .show{
+     visibility:visible;
+     opacity:1;
+     transition:all 0.5s ease;
+}
+
+
+		.Crop-App-to-bg {
+			position: relative;
+			overflow:hidden;
+			display: block;
+			width:100%;
+			padding-bottom: 174%;
+
+		}
+		.App-bg {
+			display:block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+		}
+
+		.spin-triangle {
+			margin-top:42%;
+			display:block;
+			position: absolute;
+			top: 0;
+			left: 6.5%;
+			width: 90%;	
+			-webkit-animation: spin1 10s infinite linear;
+			-moz-animation: spin1 10s infinite linear;
+			-o-animation: spin1 10s infinite linear;
+			-ms-animation: spin1 10s infinite linear;
+			animation: spin1 10s infinite linear;
+			display: block;
+		}
+ /* SPIN CLOCKWISE */
+		@-webkit-keyframes spin1 {
+		0% { -webkit-transform: rotate(360deg);}
+		100% { -webkit-transform: rotate(0deg);}
+		}
+		@-moz-keyframes spin1 {
+		0% { -moz-transform: rotate(360deg);}
+		100% { -moz-transform: rotate(0deg);}
+		}
+		@-o-keyframes spin1 {
+		0% { -o-transform: rotate(360deg);}
+		100% { -o-transform: rotate(0deg);}
+		}
+		@-ms-keyframes spin1 {
+		0% { -ms-transform: rotate(360deg);}
+		100% { -ms-transform: rotate(0deg);}
+		}
+		@-keyframes spin1 {
+		0% { transform: rotate(360deg);}
+		100% { transform: rotate(0deg);}
+		} 
+ /* SPIN ANTI-CLOCKWISE */
+		@-webkit-keyframes spin2 {
+		0% { -webkit-transform: rotate(0deg);}
+		100% { -webkit-transform: rotate(360deg);}
+		}
+		@-moz-keyframes spin2 {
+		0% { -moz-transform: rotate(0deg);}
+		100% { -moz-transform: rotate(360deg);}
+		}
+		@-o-keyframes spin2 {
+		0% { -o-transform: rotate(0deg);}
+		100% { -o-transform: rotate(360deg);}
+		}
+		@-ms-keyframes spin2 {
+		0% { -ms-transform: rotate(0deg);}
+		100% { -ms-transform: rotate(360deg);}
+		}
+		@-keyframes spin2 {
+		0% { transform: rotate(0deg);}
+		100% { transform: rotate(360deg);}
+		} 
+
+
+
+
+
+
+		.planet-1 {
+			padding-bottom: 124%;
+			display:block;
+			position: absolute;
+			top: 4%;
+		    left: 40%;
+		    width: 20%;
+			-webkit-animation: spin1 30s infinite linear;
+			-moz-animation: spin1 30s infinite linear;
+			-o-animation: spin1 30s infinite linear;
+			-ms-animation: spin1 30s infinite linear;
+			animation: spin1 30s infinite linear;
+			display: block;
+		}
+		.planet-2 {
+			padding-bottom: 152%;
+			display:block;
+			position: absolute;
+		    top: -10%;
+		    left: 45%;
+		    width: 10%;
+			-webkit-animation: spin2 30s infinite linear;
+			-moz-animation: spin2 30s infinite linear;
+			-o-animation: spin2 30s infinite linear;
+			-ms-animation: spin2 30s infinite linear;
+			animation: spin2 30s infinite linear;
+			display: block;
+		}
+		.planet-3 {
+			padding-bottom: 142%;
+			display:block;
+			position: absolute;
+		    top: 9%;
+		    left: 40%;
+		    width: 20%;
+			-webkit-animation: spin1 36s infinite linear;
+			-moz-animation: spin1 36s infinite linear;
+			-o-animation: spin1 36s infinite linear;
+			-ms-animation: spin1 36s infinite linear;
+			animation: spin1 36s infinite linear;
+			display: block;
+		}
+		.planet-4 {
+			padding-bottom: 124%;
+			display:block;
+			position: absolute;
+			top: 4%;
+		    left: 40%;
+		    width: 20%;
+			-webkit-animation: spin1 48s infinite linear;
+			-moz-animation: spin1 48s infinite linear;
+			-o-animation: spin1 48s infinite linear;
+			-ms-animation: spin1 48s infinite linear;
+			animation: spin1 48s infinite linear;
+			display: block;
+		}
+		.planet-5 {
+			padding-bottom: 122%;
+			display:block;
+			position: absolute;
+		    top: 0%;
+		    left: 42%;
+		    width: 16%;
+			-webkit-animation: spin2 54s infinite linear;
+			-moz-animation: spin2 54s infinite linear;
+			-o-animation: spin2 54s infinite linear;
+			-ms-animation: spin2 54s infinite linear;
+			animation: spin2 54s infinite linear;
+			display: block;
+		}
+		.planet-6 {
+			padding-bottom: 102%;
+			display:block;
+			position: absolute;
+		    top: 10%;
+		    left: 38%;
+		    width: 24%;
+			-webkit-animation: spin2 48s infinite linear;
+			-moz-animation: spin2 48s infinite linear;
+			-o-animation: spin2 48s infinite linear;
+			-ms-animation: spin2 48s infinite linear;
+			animation: spin2 48s infinite linear;
+			display: block;
+		}
+		.planet-7 {
+			padding-bottom: 64%;
+			display:block;
+			position: absolute;
+			top: 20%;
+		    left: 40%;
+		    width: 20%;
+			-webkit-animation: spin2 72s infinite linear;
+			-moz-animation: spin2 72s infinite linear;
+			-o-animation: spin2 72s infinite linear;
+			-ms-animation: spin2 72s infinite linear;
+			animation: spin2 72s infinite linear;
+			display: block;
+		}
+		.planet-8 {
+			padding-bottom: 120%;
+			display:block;
+			position: absolute;
+			top: 8%;
+		    left: 40%;
+		    width: 20%;
+			-webkit-animation: spin2 72s infinite linear;
+			-moz-animation: spin2 72s infinite linear;
+			-o-animation: spin2 72s infinite linear;
+			-ms-animation: spin2 72s infinite linear;
+			animation: spin2 72s infinite linear;
+			display: block;
+		}
+		.planet-9 {
+			padding-bottom: 102%;
+			display:block;
+			position: absolute;
+			top: 8%;
+		    left: 40%;
+		    width: 10%;
+			-webkit-animation: spin1 72s infinite linear;
+			-moz-animation: spin1 72s infinite linear;
+			-o-animation: spin1 72s infinite linear;
+			-ms-animation: spin1 72s infinite linear;
+			animation: spin1 72s infinite linear;
+			display: block;
+		}
+
+
+
+	/* MASKS */
+		@-webkit-keyframes maskSpin1 {
+		0% { 
+				top: 5%;
+				opacity: 0.25;
+			}
+		25% { 
+			top: 8%;
+			opaciy: 0.5;
+		}
+		75% { 
+			top: 4%;
+			opaciy: 0.75;
+		}
+		100% { 
+			top: 5%;
+			opaciy: 0.5;
+		}
+		}
+		/* MASKS 2 */
+				@-webkit-keyframes maskSpin2 {
+		0% { 
+				top: 5%;
+				opacity: 0.25;
+			}
+		25% { 
+			top: 4%;
+			opaciy: 0.5;
+		}
+		75% { 
+			top: 8%;
+			opaciy: 0.75;
+		}
+		100% { 
+			top: 5%;
+			opaciy: 0.5;
+		}
+		}
+		 
+
+		.ooga-1 {
+			position: absolute;
+			padding-top: 151%;
+		    left: 2%;
+		    width: 4%;
+			display: block;
+			animation: maskSpin1 3s infinite linear;
+			animation-direction: alternate;
+
+		}
+		.ooga-2 {
+			position: absolute;
+    		padding-top: 151%;
+    		left: 10%;
+   			width: 4.5%;
+			display: block;
+			animation: maskSpin2 3s infinite linear;
+			animation-direction: alternate;
+		}
+		.ooga-3 {
+			position: absolute;
+    		padding-top: 151%;
+    		left: 25%;
+   			width: 6%;
+			display: block;
+			animation: maskSpin1 3s infinite linear;
+			animation-direction: alternate;
+		}
+		.ooga-4 {
+			position: absolute;
+			padding-top: 151%;
+    		left: 38%;
+   			width: 3%;
+			display: block;
+			animation: maskSpin2 3s infinite linear;
+			animation-direction: alternate;
+		}
+		.ooga-5 {
+			position: absolute;
+			padding-top: 151%;
+    		left: 56%;
+   			width: 6%;
+			display: block;
+			animation: maskSpin1 3s infinite linear;
+			animation-direction: alternate;
+		}
+		.ooga-6 {
+			position: absolute;
+    		padding-top: 151%;
+    		left: 68%;
+   			width: 5%;
+			display: block;
+			animation: maskSpin2 3s infinite linear;
+			animation-direction: alternate;
+		}
+		.ooga-7 {
+			position: absolute;
+    		padding-top: 151%;
+    		left: 85%;
+   			width: 3%;
+			display: block;
+			animation: maskSpin1 3s infinite linear;
+			animation-direction: alternate;
+		}
+		.ooga-8 {
+			position: absolute;
+    		padding-top: 151%;
+    		left: 94%;
+    		width: 3%;
+			display: block;
+			animation: maskSpin2 3s infinite linear;
+			animation-direction: alternate;
+		}
+
+
+
+
+		/* Spinning Oogah Masks !! */
+
+		.ooga-spin-1 {
+			position: absolute;
+			padding-bottom: 102%;
+		    display: block;
+		    left: 48.5%;
+		    width: 4%;
+			-webkit-animation: spin1 72s infinite linear;
+			-moz-animation: spin1 72s infinite linear;
+			-o-animation: spin1 72s infinite linear;
+			-ms-animation: spin1 72s infinite linear;
+			animation: spin1 72s infinite linear;
+		}
+		.ooga-spin-2 {
+		    position: absolute;
+		    padding-bottom: 83%;
+		    display: block;
+		    left: 47.8%;
+		    width: 4.5%;
+		    top: 10%;
+			-webkit-animation: spin2 72s infinite linear;
+			-moz-animation: spin2 72s infinite linear;
+			-o-animation: spin2 72s infinite linear;
+			-ms-animation: spin2 72s infinite linear;
+			animation: spin2 72s infinite linear;
+		}
+		.ooga-spin-3 {
+			position: absolute;
+    		padding-bottom: 102%;
+    		display: block;
+    		left: 47%;
+   			width: 6%;
+   			top:20%;
+			-webkit-animation: spin1 72s infinite linear;
+			-moz-animation: spin1 72s infinite linear;
+			-o-animation: spin1 72s infinite linear;
+			-ms-animation: spin1 72s infinite linear;
+			animation: spin1 72s infinite linear;
+		}
+		.ooga-spin-4 {
+			position: absolute;
+			padding-bottom: 82%;
+    		display: block;
+    		left: 48.5%;
+   			width: 3%;
+   			top:30%;
+			-webkit-animation: spin2 72s infinite linear;
+			-moz-animation: spin2 72s infinite linear;
+			-o-animation: spin2 72s infinite linear;
+			-ms-animation: spin2 72s infinite linear;
+			animation: spin2 72s infinite linear;
+		}
+		.ooga-spin-5 {
+			position: absolute;
+			padding-bottom: 102%;
+    		display: block;
+    		left: 47%;
+   			width: 6%;
+   			top:40%;
+			-webkit-animation: spin1 72s infinite linear;
+			-moz-animation: spin1 72s infinite linear;
+			-o-animation: spin1 72s infinite linear;
+			-ms-animation: spin1 72s infinite linear;
+			animation: spin1 72s infinite linear;
+		}
+		.ooga-spin-6 {
+			position: absolute;
+    		padding-bottom: 102%;
+    		display: block;
+    		left: 47.4%;
+   			width: 5%;
+	   		top:50%;
+			-webkit-animation: spin2 72s infinite linear;
+			-moz-animation: spin2 72s infinite linear;
+			-o-animation: spin2 72s infinite linear;
+			-ms-animation: spin2 72s infinite linear;
+			animation: spin2 72s infinite linear;
+		}
+		.ooga-spin-7 {
+			position: absolute;
+    		padding-bottom: 102%;
+    		display: block;
+    		left: 48.4%;
+   			width: 3%;
+   			top:60%;
+			-webkit-animation: spin1 72s infinite linear;
+			-moz-animation: spin1 72s infinite linear;
+			-o-animation: spin1 72s infinite linear;
+			-ms-animation: spin1 72s infinite linear;
+			animation: spin1 72s infinite linear;
+		}
+		.ooga-spin-8 {
+			position: absolute;
+    		padding-bottom: 102%;
+    		display: block;
+    		left: 48.5%;
+    		width: 3%;
+    		top:70%;
+			-webkit-animation: spin2 72s infinite linear;
+			-moz-animation: spin2 72s infinite linear;
+			-o-animation: spin2 72s infinite linear;
+			-ms-animation: spin2 72s infinite linear;
+			animation: spin2 72s infinite linear;
+		}
+
+
+
+
+
+
+
+
+
+		.main-content {
+			position: absolute;
+    		padding-top: 14%;
+    		left: 5%;
+    		width: 90%;
+			display: block;
+		}
+		.left-feather {
+			position: absolute;
+    padding-top: 14.4%;
+left: 8.8%;
+    width: 20%;
+			display: block;
+		}
+		.right-feather {
+			transform: rotateY(-180deg);
+			position: absolute;
+    padding-top: 14.2%;
+    left: 71.6%;
+    width: 20%;
+			display: block;
+		}
+		.eyebrows {
+			position: absolute;
+			padding-top: 31.4%;
+			left: 42%;
+			width: 16%;
+			display: block;
+		}
+
+
+
+
+
+
+
+/*eyes*/
+/* control */
+.control-cnt {
+  position: absolute;
+  width: 100%; height: 100%;
+}
+.control {
+  position: relative;
+  width: 19.7%; height: 10%;
+  float: left;
+  z-index: 1;
+ /* border: 1px solid red;*/
+}
+
+/* eye */
+.eye {
+  position: absolute;
+  padding-top:32%;
+  width: 2.7%; height: 2.7%;
+  left: 44.6%;
+  -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;
+}
+.eye2 {
+  position: absolute;
+  padding-top:32%;
+  width: 2.7%; height: 2.7%;
+  left: 52.6%;
+  -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;
+}
+
+/* blue eye and shadow */
+.eye-inside-cnt {
+  position: absolute;
+  width: 100%; height: 34%;
+ 
+}
+.eye-inside {
+  width: 100%; height: 24%;
+  background-color: #d8ba00;
+  -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;
+  overflow: hidden;
+}
+/* eye inside (black) */
+.eye-really-inside {
+  width: 80%; height: 74%;
+  margin-top: 1%;
+  margin-left: 1%;
+  background-color: #000;
+  -webkit-border-radius: 50%; -moz-border-radius: 50%; border-radius: 50%;
+  -webkit-transition: 0.1s linear; -moz-transition: 0.1s linear; transition: 0.1s linear;
+}
+/* hovers to change eye-inside position */
+/* eye 1 line 1 */
+.hover-1:hover ~ .eye .eye-inside .eye-really-inside { margin-top: -3px; margin-left: -4px; }
+.hover-2:hover ~ .eye .eye-inside .eye-really-inside { margin-top: -3px; margin-left: -2px; }
+.hover-3:hover ~ .eye .eye-inside .eye-really-inside { margin-top: -3px; margin-left: 2px; }
+.hover-4:hover ~ .eye .eye-inside .eye-really-inside { margin-top: -3px; margin-left: 6px; }
+.hover-5:hover ~ .eye .eye-inside .eye-really-inside { margin-top: -3px; margin-left: 9px; }
+/* line 2 */
+.hover-6:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 2px; margin-left: -4px; }
+.hover-7:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 2px; margin-left: -2px; }
+.hover-8:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 0px; margin-left: 0px; }
+.hover-9:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 2px; margin-left: 6px; }
+.hover-10:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 2px; margin-left: 9px; }
+/* line 3*/
+.hover-11:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 6px; margin-left: -4px; }
+.hover-12:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 6px; margin-left: -2px; }
+.hover-13:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 6px; margin-left: 2px; }
+.hover-14:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 6px; margin-left: 6px; }
+.hover-15:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 6px; margin-left: 9px; }
+/* line 4 */
+.hover-16:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 9px; margin-left: -4px; }
+.hover-17:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 9px; margin-left: -2px; }
+.hover-18:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 9px; margin-left: 2px; }
+.hover-19:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 9px; margin-left: 6px; }
+.hover-20:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 9px; margin-left: 9px; }
+/* line 5 */
+.hover-21:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 11px; margin-left: -4px; }
+.hover-22:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 11px; margin-left: -2px; }
+.hover-23:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 11px; margin-left: 3px; }
+.hover-24:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 11px; margin-left: 6px; }
+.hover-25:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 11px; margin-left: 9px; }
+
+
+/* eye 2 line 1 */
+.hover-1:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: -3px; margin-left: -4px; }
+.hover-2:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: -3px; margin-left: -2px; }
+.hover-3:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: -3px; margin-left: 2px; }
+.hover-4:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: -3px; margin-left: 6px; }
+.hover-5:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: -3px; margin-left: 9px; }
+/* line 2 */
+.hover-6:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 2px; margin-left: -4px; }
+.hover-7:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 2px; margin-left: -2px; }
+.hover-8:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 0px; margin-left: 0px; }
+.hover-9:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 2px; margin-left: 6px; }
+.hover-10:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 2px; margin-left: 9px; }
+/* line 3*/
+.hover-11:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 6px; margin-left: -4px; }
+.hover-12:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 6px; margin-left: -2px; }
+.hover-13:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 6px; margin-left: 2px; }
+.hover-14:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 6px; margin-left: 6px; }
+.hover-15:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 6px; margin-left: 9px; }
+/* line 4 */
+.hover-16:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 9px; margin-left: -4px; }
+.hover-17:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 9px; margin-left: -2px; }
+.hover-18:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 9px; margin-left: 2px; }
+.hover-19:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 9px; margin-left: 6px; }
+.hover-20:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 9px; margin-left: 9px; }
+/* line 5 */
+.hover-21:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 11px; margin-left: -4px; }
+.hover-22:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 11px; margin-left: -2px; }
+.hover-23:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 11px; margin-left: 3px; }
+.hover-24:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 11px; margin-left: 6px; }
+.hover-25:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 11px; margin-left: 9px; }
+
+/* Using SCSS variables to store breakpoints */
+$breakpoint-tablet: 768px;
+@media (max-width: $breakpoint-tablet) {
+
+.control {
+  width: 18.7%; height: 10%;
+}
+
+
+.hover-1:hover ~ .eye .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: -2px; }
+.hover-2:hover ~ .eye .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: -1px; }
+.hover-3:hover ~ .eye .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: 1px; }
+.hover-4:hover ~ .eye .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: 3px; }
+.hover-5:hover ~ .eye .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: 4.5px; }
+/* line 2 */
+.hover-6:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 1px; margin-left: -2px; }
+.hover-7:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 1px; margin-left: -1px; }
+.hover-8:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 0px; margin-left: 0px; }
+.hover-9:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 1px; margin-left: 3px; }
+.hover-10:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 1px; margin-left: 4.5px; }
+/* line 3*/
+.hover-11:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 3px; margin-left: -2px; }
+.hover-12:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 3px; margin-left: -1px; }
+.hover-13:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 3px; margin-left: 1px; }
+.hover-14:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 3px; margin-left: 3px; }
+.hover-15:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 3px; margin-left: 4.5px; }
+/* line 4 */
+.hover-16:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: -2px; }
+.hover-17:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: -1px; }
+.hover-18:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: 1px; }
+.hover-19:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: 3px; }
+.hover-20:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: 4.5px; }
+/* line 5 */
+.hover-21:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: -2px; }
+.hover-22:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: -1px; }
+.hover-23:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: 1.5px; }
+.hover-24:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: 3px; }
+.hover-25:hover ~ .eye .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: 4.5px; }
+
+
+
+.hover-1:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: -2px; }
+.hover-2:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: -1px; }
+.hover-3:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: 1px; }
+.hover-4:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: 3px; }
+.hover-5:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: 4.5px; }
+/* line 2 */
+.hover-6:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 1px; margin-left: -2px; }
+.hover-7:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 1px; margin-left: -1px; }
+.hover-8:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 0px; margin-left: 0px; }
+.hover-9:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 1px; margin-left: 3px; }
+.hover-10:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 1px; margin-left: 4.5px; }
+/* line 3*/
+.hover-11:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 3px; margin-left: -2px; }
+.hover-12:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 3px; margin-left: -1px; }
+.hover-13:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 3px; margin-left: 1px; }
+.hover-14:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 3px; margin-left: 3px; }
+.hover-15:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 3px; margin-left: 4.5px; }
+/* line 4 */
+.hover-16:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: -2px; }
+.hover-17:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: -1px; }
+.hover-18:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: 1px; }
+.hover-19:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: 3px; }
+.hover-20:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: 4.5px; }
+/* line 5 */
+.hover-21:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: -2px; }
+.hover-22:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: -1px; }
+.hover-23:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: 1.5px; }
+.hover-24:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: 3px; }
+.hover-25:hover ~ .eye2 .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: 4.5px; }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Touch support */
+/* eye 1 line 1 */
+.hover-1:active ~ .eye .eye-inside .eye-really-inside { margin-top: -3px; margin-left: -4px; }
+.hover-2:active ~ .eye .eye-inside .eye-really-inside { margin-top: -3px; margin-left: -2px; }
+.hover-3:active ~ .eye .eye-inside .eye-really-inside { margin-top: -3px; margin-left: 2px; }
+.hover-4:active ~ .eye .eye-inside .eye-really-inside { margin-top: -3px; margin-left: 6px; }
+.hover-5:active ~ .eye .eye-inside .eye-really-inside { margin-top: -3px; margin-left: 9px; }
+/* line 2 */
+.hover-6:active ~ .eye .eye-inside .eye-really-inside { margin-top: 2px; margin-left: -4px; }
+.hover-7:active ~ .eye .eye-inside .eye-really-inside { margin-top: 2px; margin-left: -2px; }
+.hover-8:active ~ .eye .eye-inside .eye-really-inside { margin-top: 0px; margin-left: 0px; }
+.hover-9:active ~ .eye .eye-inside .eye-really-inside { margin-top: 2px; margin-left: 6px; }
+.hover-10:active ~ .eye .eye-inside .eye-really-inside { margin-top: 2px; margin-left: 9px; }
+/* line 3*/
+.hover-11:active ~ .eye .eye-inside .eye-really-inside { margin-top: 6px; margin-left: -4px; }
+.hover-12:active ~ .eye .eye-inside .eye-really-inside { margin-top: 6px; margin-left: -2px; }
+.hover-13:active ~ .eye .eye-inside .eye-really-inside { margin-top: 6px; margin-left: 2px; }
+.hover-14:active ~ .eye .eye-inside .eye-really-inside { margin-top: 6px; margin-left: 6px; }
+.hover-15:active ~ .eye .eye-inside .eye-really-inside { margin-top: 6px; margin-left: 9px; }
+/* line 4 */
+.hover-16:active ~ .eye .eye-inside .eye-really-inside { margin-top: 9px; margin-left: -4px; }
+.hover-17:active ~ .eye .eye-inside .eye-really-inside { margin-top: 9px; margin-left: -2px; }
+.hover-18:active ~ .eye .eye-inside .eye-really-inside { margin-top: 9px; margin-left: 2px; }
+.hover-19:active ~ .eye .eye-inside .eye-really-inside { margin-top: 9px; margin-left: 6px; }
+.hover-20:active ~ .eye .eye-inside .eye-really-inside { margin-top: 9px; margin-left: 9px; }
+/* line 5 */
+.hover-21:active ~ .eye .eye-inside .eye-really-inside { margin-top: 11px; margin-left: -4px; }
+.hover-22:active ~ .eye .eye-inside .eye-really-inside { margin-top: 11px; margin-left: -2px; }
+.hover-23:active ~ .eye .eye-inside .eye-really-inside { margin-top: 11px; margin-left: 3px; }
+.hover-24:active ~ .eye .eye-inside .eye-really-inside { margin-top: 11px; margin-left: 6px; }
+.hover-25:active ~ .eye .eye-inside .eye-really-inside { margin-top: 11px; margin-left: 9px; }
+
+
+/* eye 2 line 1 */
+.hover-1:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: -3px; margin-left: -4px; }
+.hover-2:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: -3px; margin-left: -2px; }
+.hover-3:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: -3px; margin-left: 2px; }
+.hover-4:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: -3px; margin-left: 6px; }
+.hover-5:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: -3px; margin-left: 9px; }
+/* line 2 */
+.hover-6:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 2px; margin-left: -4px; }
+.hover-7:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 2px; margin-left: -2px; }
+.hover-8:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 0px; margin-left: 0px; }
+.hover-9:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 2px; margin-left: 6px; }
+.hover-10:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 2px; margin-left: 9px; }
+/* line 3*/
+.hover-11:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 6px; margin-left: -4px; }
+.hover-12:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 6px; margin-left: -2px; }
+.hover-13:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 6px; margin-left: 2px; }
+.hover-14:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 6px; margin-left: 6px; }
+.hover-15:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 6px; margin-left: 9px; }
+/* line 4 */
+.hover-16:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 9px; margin-left: -4px; }
+.hover-17:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 9px; margin-left: -2px; }
+.hover-18:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 9px; margin-left: 2px; }
+.hover-19:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 9px; margin-left: 6px; }
+.hover-20:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 9px; margin-left: 9px; }
+/* line 5 */
+.hover-21:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 11px; margin-left: -4px; }
+.hover-22:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 11px; margin-left: -2px; }
+.hover-23:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 11px; margin-left: 3px; }
+.hover-24:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 11px; margin-left: 6px; }
+.hover-25:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 11px; margin-left: 9px; }
+
+/* Using SCSS variables to store breakpoints */
+$breakpoint-tablet: 768px;
+@media (max-width: $breakpoint-tablet) {
+
+.control {
+  width: 18.7%; height: 10%;
+}
+
+
+.hover-1:active ~ .eye .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: -2px; }
+.hover-2:active ~ .eye .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: -1px; }
+.hover-3:active ~ .eye .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: 1px; }
+.hover-4:active ~ .eye .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: 3px; }
+.hover-5:active ~ .eye .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: 4.5px; }
+/* line 2 */
+.hover-6:active ~ .eye .eye-inside .eye-really-inside { margin-top: 1px; margin-left: -2px; }
+.hover-7:active ~ .eye .eye-inside .eye-really-inside { margin-top: 1px; margin-left: -1px; }
+.hover-8:active ~ .eye .eye-inside .eye-really-inside { margin-top: 0px; margin-left: 0px; }
+.hover-9:active ~ .eye .eye-inside .eye-really-inside { margin-top: 1px; margin-left: 3px; }
+.hover-10:active ~ .eye .eye-inside .eye-really-inside { margin-top: 1px; margin-left: 4.5px; }
+/* line 3*/
+.hover-11:active ~ .eye .eye-inside .eye-really-inside { margin-top: 3px; margin-left: -2px; }
+.hover-12:active ~ .eye .eye-inside .eye-really-inside { margin-top: 3px; margin-left: -1px; }
+.hover-13:active ~ .eye .eye-inside .eye-really-inside { margin-top: 3px; margin-left: 1px; }
+.hover-14:active ~ .eye .eye-inside .eye-really-inside { margin-top: 3px; margin-left: 3px; }
+.hover-15:active ~ .eye .eye-inside .eye-really-inside { margin-top: 3px; margin-left: 4.5px; }
+/* line 4 */
+.hover-16:active ~ .eye .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: -2px; }
+.hover-17:active ~ .eye .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: -1px; }
+.hover-18:active ~ .eye .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: 1px; }
+.hover-19:active ~ .eye .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: 3px; }
+.hover-20:active ~ .eye .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: 4.5px; }
+/* line 5 */
+.hover-21:active ~ .eye .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: -2px; }
+.hover-22:active ~ .eye .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: -1px; }
+.hover-23:active ~ .eye .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: 1.5px; }
+.hover-24:active ~ .eye .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: 3px; }
+.hover-25:active ~ .eye .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: 4.5px; }
+
+
+
+.hover-1:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: -2px; }
+.hover-2:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: -1px; }
+.hover-3:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: 1px; }
+.hover-4:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: 3px; }
+.hover-5:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: -1.5px; margin-left: 4.5px; }
+/* line 2 */
+.hover-6:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 1px; margin-left: -2px; }
+.hover-7:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 1px; margin-left: -1px; }
+.hover-8:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 0px; margin-left: 0px; }
+.hover-9:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 1px; margin-left: 3px; }
+.hover-10:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 1px; margin-left: 4.5px; }
+/* line 3*/
+.hover-11:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 3px; margin-left: -2px; }
+.hover-12:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 3px; margin-left: -1px; }
+.hover-13:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 3px; margin-left: 1px; }
+.hover-14:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 3px; margin-left: 3px; }
+.hover-15:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 3px; margin-left: 4.5px; }
+/* line 4 */
+.hover-16:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: -2px; }
+.hover-17:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: -1px; }
+.hover-18:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: 1px; }
+.hover-19:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: 3px; }
+.hover-20:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 4.5px; margin-left: 4.5px; }
+/* line 5 */
+.hover-21:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: -2px; }
+.hover-22:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: -1px; }
+.hover-23:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: 1.5px; }
+.hover-24:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: 3px; }
+.hover-25:active ~ .eye2 .eye-inside .eye-really-inside { margin-top: 5.5px; margin-left: 4.5px; }
+}
+
+/* text */
+
+/* logo */
+a.logo-link {
+    position: absolute; 
+     padding-top: 3.4%; 
+    left: 37%;
+    width: 30%;
+    display: block;
+    height: 14%;
+    z-index: 2;/*above hover eyes 1*/
+
+	 /*  LOGO */
+	 @-webkit-keyframes logoAppear {	 		
+		0% { 	
+			width: 0%;
+			top: 5%;
+			opacity: 0;
+			left: 35%;
+			}
+		50% {
+			top: 7%;
+			width: 80%;
+			opacity: 0.4;
+			left: 10%;
+			}
+		100% { 
+			top: 12%;
+			width: 100%;
+			opacity: 1;
+			left: 0%;
+
+		}
+	} 
+
+
+	img.logo-cruz {
+		position: absolute;
+	    padding-top: 0%;
+	    left: 0%;
+	    width: 100%;
+		display: block;
+		margin:0 auto;
+		opacity: 0;
+		animation: logoAppear 0.75s 1 linear;
+		animation-delay: 3s;
+		animation-fill-mode: both;
+
+		    &:hover {
+	    	opacity: 0.75;
+	    	}
+	    	&:active{
+	    	opacity: 0.75;
+	    	}
+	}
+}
+a img.logo-cruz:hover, a img.logo-cruz:active {
+	opacity: 0.75;
+
+} 
+
+a.logo-link:hover img.logo-cruz {
+	opacity: 0.5;
+}
+
+
+/* logo */
+a.enter-link {
+	cursor: pointer;
+    position: absolute;
+    padding-top: 126.4%;
+    left: 36%;
+    width: 27%;
+    display: block;
+    height: 14%;
+    z-index: 3;/*above main logo on 2*/
+
+    	img.enter-img {
+		position: absolute;
+	    padding-top: 0%;
+	    left: 0%;
+	    width: 100%;
+		display: block;
+		margin:0 auto;
+		&:hover {
+	    	opacity: 0.55;
+	    	}
+	}
+
+    }
+
+    }
+
+$breakpoint-tablet: 768px;
+    @media (max-width: $breakpoint-tablet) {
+ body a.logo-link {
+    position: absolute;
+    top: -1%;
+    left: 34%;
+    width: 38%;
+    height: 14%;
+}
+}
